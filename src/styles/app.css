@@ -1,0 +1,19 @@
+.poster-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.poster-container .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.25s ease;
+}
+
+.poster-container:hover .overlay {
+    opacity: 1;
+}
