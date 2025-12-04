@@ -1,0 +1,16 @@
+.player-page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.video-wrapper {
+    background: #0d0d0d;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.6);
+}
+
+.video-wrapper video {
+    border-radius: 10px;
+}

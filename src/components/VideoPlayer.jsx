@@ -24,7 +24,8 @@ export default function VideoPlayer({ src, poster }) {
 
         if (Hls.isSupported()) {
             const hls = new Hls();
-            hls.loadSource(src);
+            hls.loadSource(src || "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8");
+
             hls.attachMedia(video);
 
             hls.on(Hls.Events.MANIFEST_PARSED, () => setLoading(false));

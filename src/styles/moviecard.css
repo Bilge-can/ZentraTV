@@ -1,0 +1,68 @@
+.movie-card {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.04);
+}
+
+.poster-container {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    border-radius: 6px;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.poster-container:hover .overlay {
+    opacity: 1;
+}
+
+/* HOVER DETAY */
+.movie-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.85);
+    color: #d66d35;
+    opacity: 0;
+    transition: 0.3s ease;
+    overflow-y: auto;
+}
+
+.poster-container:hover .movie-hover {
+    opacity: 1;
+}
+
+.movie-hover h4 {
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.movie-hover p {
+    font-size: 14px;
+    margin: 3px 0;
+}
+
+.overview {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-top: 7px;
+}

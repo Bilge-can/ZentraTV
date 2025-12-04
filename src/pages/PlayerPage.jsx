@@ -1,25 +1,21 @@
-import React from 'react';
-import { useLocation, useParams } from 'react-router-dom';
-import VideoPlayer from '../components/VideoPlayer';
-import { Container, Header, Content } from 'rsuite';
-import { posterUrl } from '../services/tmdbApi';
+import React from "react";
+import VideoPlayer from "../components/VideoPlayer";
+import "../styles/player.css";
+import { useLocation } from "react-router-dom";
 
 export default function PlayerPage() {
-    const { state } = useLocation();
-    const { id } = useParams();
 
-    const movie = state?.movie ?? { id, title: 'Untitled', poster_path: null };
-    const hls = process.env.REACT_APP_SAMPLE_HLS;
+    const { state } = useLocation();
+    const movie = state?.movie;
 
     return (
-        <Container>
-            <Header style={{ padding: 20 }}>
-                <h2>{movie.title}</h2>
-            </Header>
-
-            <Content style={{ padding: 20 }}>
-                <VideoPlayer src={hls} poster={posterUrl(movie.poster_path)} />
-            </Content>
-        </Container>
+        <div className="player-page">
+            <div className="video-wrapper">
+                <VideoPlayer
+                    src={movie.stream_url || movie.videoUrl}
+                    poster={movie.poster_path}
+                />
+            </div>
+        </div>
     );
 }
